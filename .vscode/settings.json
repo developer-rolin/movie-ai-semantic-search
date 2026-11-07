@@ -1,0 +1,5 @@
+{
+  "js/ts.tsserver.maxMemory": 4096,
+  "js/ts.suggest.completeFunctionCalls": true,
+  "js/ts.workspaceSymbols.scope": "currentProject"
+}

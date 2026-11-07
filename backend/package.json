@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir dist",
+    "start": "node dist/server.js",
+    "prisma:migrate:dev": "npx prisma migrate dev",
+    "prisma:seed": "tsx prisma/seed.ts",
+    "db:generate-embeddings": "tsx prisma/generate-embeddings.ts",
+    "db:setup": "pnpm prisma:migrate:dev && pnpm prisma:seed && pnpm db:generate-embeddings"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/cors": "^11.3.1",
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@xenova/transformers": "^2.17.2",
+    "csv-parser": "^3.2.1",
+    "dotenv": "^18.0.8",
+    "fastify": "^5.12.7",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "prisma": "^7.10.1",
+    "tsup": "^8.3.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

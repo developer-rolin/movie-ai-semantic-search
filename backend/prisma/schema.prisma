@@ -1,0 +1,34 @@
+datasource db {
+  provider   = "postgresql"
+  extensions = [pgvector(map: "vector")]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+  output          = "../node_modules/.prisma/client"
+}
+
+model Movie {
+  id          Int      @id @default(autoincrement())
+  tmdbId      Int      @unique
+  title       String
+  overview    String
+  tagline     String?
+  genres      String[]
+  keywords    String[]
+  cast        String[]
+  director    String?
+  releaseYear Int?
+  voteAverage Float
+  voteCount   Int
+  popularity  Float
+  budget      BigInt?
+  revenue     BigInt?
+
+  embedding Unsupported("vector(384)")?
+
+  createdAt DateTime @default(now())
+
+  @@map("movies")
+}

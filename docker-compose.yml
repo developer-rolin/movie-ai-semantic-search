@@ -1,0 +1,16 @@
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: tmdb_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: tmdb_search
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
