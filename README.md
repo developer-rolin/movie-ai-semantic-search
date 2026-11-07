@@ -61,7 +61,7 @@ Ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Projeto_movies_5000.git
+git clone git@github.com:developer-rolin/movie-ai-semantic-search.git
 cd Projeto_movies_5000
 ```
 
